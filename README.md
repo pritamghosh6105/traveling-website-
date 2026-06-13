@@ -26,6 +26,7 @@ A full-stack travel booking web application developed using PHP, MySQL, HTML, CS
 - Hotel Invoice Generation
 
 ### 💳 Payment System
+FAKE 
 - UPI Payments
 - Debit Card Payments
 - QR Code Payments
