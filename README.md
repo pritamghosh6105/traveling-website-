@@ -63,7 +63,7 @@ A full-stack travel booking web application developed using PHP, MySQL, HTML, CS
 ## ⚙️ Installation
 
 1. Clone the repository.
-2. Place the project inside XAMPP htdocs.
+2. Place the project inside WAMPP www.
 3. Create a MySQL database named `travel_world`.
 4. Update database credentials in `db.php`.
 5. Start Apache and MySQL.
