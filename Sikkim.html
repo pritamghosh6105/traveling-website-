@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sikkim 
+</title>
+
+<style>
+
+@import url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRn_P4tDvjGw5TpT60aXtQ14n5c9iptP2i8Cw&s');
+
+:root{
+    --ocean:#00b4d8;
+    --deep:#023e8a;
+    --light:#caf0f8;
+    --sun:#ff9e00;
+    --sand:#fff4d6;
+    --white:#ffffff;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    background:
+    linear-gradient(to bottom,#c8f1ff,#fff3d6);
+    overflow-x:hidden;
+    color:#222;
+}
+
+/* HEADER */
+
+header{
+    height:55vh;
+    position:relative;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    color:white;
+    overflow:hidden;
+}
+
+header::before{
+    content:'';
+    position:absolute;
+    inset:0;
+
+    background:
+    linear-gradient(rgba(0,0,0,0.45),rgba(0,0,0,0.45)),
+    url('https://www.esikkimtourism.in/wp-content/uploads/2019/04/3rd-image.jpg');
+
+    background-size:cover;
+    background-position:center;
+    animation:zoom 18s infinite alternate;
+}
+
+@keyframes zoom{
+    from{
+        transform:scale(1);
+    }
+    to{
+        transform:scale(1.08);
+    }
+}
+
+.hero{
+    position:relative;
+    z-index:5;
+    padding:20px;
+}
+
+.hero h1{
+    font-size:3.2rem;
+    margin-bottom:15px;
+    text-shadow:0 8px 20px rgba(0,0,0,0.5);
+}
+
+.hero p{
+    font-size:1rem;
+    max-width:700px;
+    margin:auto;
+    line-height:1.8;
+}
+
+/* WAVE BOTTOM */
+
+.wave-top{
+    position:absolute;
+    bottom:-10px;
+    width:100%;
+    z-index:4;
+}
+
+/* ROUTE SECTION */
+
+.route-container{
+    width:100%;
+    max-width:1400px;
+    margin:auto;
+    position:relative;
+    padding:100px 0;
+}
+
+/* WAVE PATH */
+
+.wave-svg{
+    position:absolute;
+    left:50%;
+    transform:translateX(-50%);
+    width:350px;
+    height:100%;
+    z-index:0;
+    overflow:visible;
+}
+
+/* CARDS */
+
+.spot{
+    width:42%;
+    position:relative;
+    margin-bottom:140px;
+    z-index:2;
+}
+
+.left{
+    left:0;
+}
+
+.right{
+    left:58%;
+}
+
+.spot-card{
+    background:rgba(255,255,255,0.75);
+    backdrop-filter:blur(14px);
+
+    border-radius:35px;
+
+    overflow:hidden;
+
+    border:1px solid rgba(255,255,255,0.5);
+
+    box-shadow:
+    0 20px 40px rgba(0,0,0,0.12),
+    0 10px 25px rgba(0,0,0,0.08);
+
+    transition:0.5s ease;
+}
+
+.spot-card:hover{
+    transform:
+    translateY(-14px)
+    scale(1.03);
+
+    box-shadow:
+    0 30px 60px rgba(0,0,0,0.18),
+    0 12px 25px rgba(0,0,0,0.12);
+}
+
+.spot-card img{
+    width:100%;
+    height:320px;
+    object-fit:cover;
+    display:block;
+    transition:0.5s;
+}
+
+.spot-card:hover img{
+    transform:scale(1.06);
+}
+
+.spot-content{
+    padding:28px;
+}
+
+.tag{
+    display:inline-block;
+    padding:8px 16px;
+    border-radius:30px;
+
+    background:linear-gradient(135deg,#00b4d8,#0077b6);
+
+    color:white;
+
+    font-size:0.75rem;
+    letter-spacing:1px;
+
+    margin-bottom:15px;
+}
+
+.spot-content h2{
+    color:var(--deep);
+    margin-bottom:12px;
+    font-size:2rem;
+}
+
+.spot-content p{
+    color:#444;
+    line-height:1.9;
+    font-size:1rem;
+}
+
+/* GLOW NODE */
+
+.spot::before{
+    content:'';
+
+    position:absolute;
+
+    width:32px;
+    height:32px;
+
+    background:
+    linear-gradient(135deg,#ffbe0b,#ff8500);
+
+    border-radius:50%;
+
+    border:6px solid white;
+
+    top:45%;
+
+    z-index:10;
+
+    box-shadow:
+    0 0 0 10px rgba(255,158,0,0.15),
+    0 0 30px rgba(255,158,0,0.8);
+}
+
+.left::before{
+    right:-88px;
+}
+
+.right::before{
+    left:-88px;
+}
+
+/* ANIMATION */
+
+.spot{
+    animation:fadeUp 1s ease both;
+}
+
+@keyframes fadeUp{
+
+    from{
+        opacity:0;
+        transform:translateY(60px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+
+}
+
+/* RESPONSIVE */
+
+@media(max-width:1000px){
+
+    .wave-svg{
+        left:45px;
+        width:120px;
+    }
+
+    .spot,
+    .left,
+    .right{
+        width:calc(100% - 100px);
+        left:90px;
+    }
+
+    .spot::before,
+    .left::before,
+    .right::before{
+        left:-62px;
+    }
+
+    .hero h1{
+        font-size:2.5rem;
+    }
+
+}
+
+@media(max-width:600px){
+
+    header{
+        height:45vh;
+    }
+
+    .spot-card img{
+        height:220px;
+    }
+
+    .spot-content h2{
+        font-size:1.6rem;
+    }
+
+    .hero h1{
+        font-size:2rem;
+    }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- HERO -->
+
+<header>
+
+    <div class="hero">
+
+        <h1> Sikkim </h1>
+
+        <p>
+              Sikkim is a breathtaking Himalayan paradise where snow-capped peaks meet pristine glacial lakes and lush valleys.  </p>
+
+    </div>
+
+    <!-- WAVE -->
+
+    
+
+</header>
+
+<!-- ROUTE -->
+
+<section class="route-container">
+
+<!-- SVG PATH -->
+
+<svg class="wave-svg" viewBox="0 0 300 2400" preserveAspectRatio="none">
+
+<defs>
+
+<linearGradient id="waveGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+<stop offset="0%" stop-color="#48cae4"/>
+<stop offset="50%" stop-color="#0096c7"/>
+<stop offset="100%" stop-color="#023e8a"/>
+</linearGradient>
+
+<filter id="glow">
+<feGaussianBlur stdDeviation="7" result="blur"/>
+<feMerge>
+<feMergeNode in="blur"/>
+<feMergeNode in="SourceGraphic"/>
+</feMerge>
+</filter>
+
+</defs>
+
+<!-- GLOW -->
+
+<path
+d="
+M150 0
+C290 150, 10 250, 150 400
+C290 550, 10 700, 150 850
+C290 1000, 10 1150, 150 1300
+C290 1450, 10 1600, 150 1750
+C290 1900, 10 2050, 150 2200
+"
+
+stroke="#90e0ef"
+stroke-width="26"
+opacity="0.25"
+fill="none"
+filter="url(#glow)"
+/>
+
+<!-- MAIN PATH -->
+
+<path
+d="
+M150 0
+C290 150, 10 250, 150 400
+C290 550, 10 700, 150 850
+C290 1000, 10 1150, 150 1300
+C290 1450, 10 1600, 150 1750
+C290 1900, 10 2050, 150 2200
+"
+
+stroke="url(#waveGradient)"
+stroke-width="10"
+fill="none"
+stroke-linecap="round"
+stroke-dasharray="18 12"
+/>
+
+</svg>
+
+<!-- SPOT 1 -->
+
+<div class="spot left">
+
+<div class="spot-card">
+
+<img src="https://s7ap1.scene7.com/is/image/incredibleindia/tsomgo-lake-gangtok-sikkim-2-attr-hero?qlt=82&ts=1742154563107">
+
+<div class="spot-content">
+
+
+<h2> Gangtok</h2>
+
+<p>
+  The vibrant capital city featuring the car-free, café-lined MG Marg and the panoramic Tashi View Point.
+</div>
+
+</div>
+
+</div>
+
+<!--SPOT 2 -->
+
+<div class="spot right">
+
+<div class="spot-card">
+
+<img src="https://img.avianexperiences.com/attractions/4c99a9a7-d0bd-4d27-8ff4-e328934920ff/Screenshot_2025-11-08_at_3.14.43_PM.png">
+
+<div class="spot-content">
+
+
+<h2>  Nathula Pass</h2>
+
+<p>
+Nathula Pass is a historic Himalayan mountain pass in East Sikkim, India, located at an elevation of  on the Indo-China border
+</div>
+
+</div>
+</div>
+
+<!-- SPOT 3 -->
+
+<div class="spot left">
+
+<div class="spot-card">
+
+<img src="https://eastindiantraveller.com/wp-content/uploads/2023/01/20230122_231745-01.jpeg?w=1200">
+
+<div class="spot-content">
+
+<h2>Gurudongmar Lake</h2>
+
+
+<p>
+   One of the highest and most revered lakes in the world, renowned for its crystal-clear, mystical beauty.
+ </p>
+</div>
+
+</div>
+</div>
+
+<!-- SPOT 4 -->
+
+<div class="spot right">
+
+<div class="spot-card">
+
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSMja1AccnEBpwmdZaJEgse4NR9HDi5ZzZ_-A&s">
+
+<div class="spot-content">
+
+
+
+<h2> Lachen & Lachung</h2>
+
+<p>
+   Picturesque, remote mountain hamlets that serve as the traditional base camps for your high-altitude adventures.
+ </p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+</body>
+</html>
